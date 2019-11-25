@@ -21,10 +21,7 @@ class CsvReader:
             exit(f"\n{self.red}задайте путь и имя файла{self.white}\n")
 
     def __del__(self):
-        try:
-            self.file.close()
-        except AttributeError:
-            pass
+        self.file.close()
 
     def __enter__(self):
         self.file = open(self.path, 'r')
